@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === `scissors` && computerSelection === `paper`) {
         console.log(`You Win! Scissors beats Paper`)
     } else {
-        console.log(`You Lose! I don't know why?`)
+        console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
     }
 }
 
