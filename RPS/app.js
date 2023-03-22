@@ -6,8 +6,6 @@
 // 5. loop 5 times
 // 6. get win or loss final
 // 7.
-const playerSelection = prompt(`Enter a value`)
-const computerSelection = getComputerChoice();
 
 function getComputerChoice(computerChoice) {
     let choice = Math.floor(Math.random() * 3);
@@ -23,8 +21,20 @@ function getComputerChoice(computerChoice) {
     }
     return computerChoice;
 }
-function playRound(playerSelection, computerChoice) {
-    if (playerSelection === `rock` && computerChoice === `scissors`) {
-
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === `rock` && computerSelection === `scissors`) {
+        console.log(`You Win! Rock beats Scissors`);
+    } else if (playerSelection === `paper` && computerSelection === `rock`) {
+        console.log(`You Win! Paper beats Rock`)
+    } else if (playerSelection === `scissors` && computerSelection === `paper`) {
+        console.log(`You Win! Scissors beats Paper`)
+    } else {
+        console.log(`You Lose! I don't know why?`)
     }
 }
+
+const playerSelection = document.getElementById(`userInput`).value;
+const computerSelection = getComputerChoice();
+// playerSelection.addEventListener(`submit`, (e) => {
+//     playRound(playerSelection, computerSelection);
+// })
