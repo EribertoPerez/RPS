@@ -7,19 +7,21 @@
 // 6. get win or loss final
 // 7.
 
-function getComputerChoice(computerChoice) {
+const playerSelection = prompt(`Please enter a value`);
+computerSelection = getComputerChoice();
+function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
-    computerChoice = [];
+    let computerSelection = [];
     if (choice === 0){
-        computerChoice = "rock";
+        computerSelection = "rock";
     }
     else if (choice === 1){
-        computerChoice = "paper";
+        computerSelection = "paper";
     }
     else if(choice === 2){
-        computerChoice = "scissors";
+        computerSelection = "scissors";
     }
-    return computerChoice;
+    return computerSelection;
 }
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === `rock` && computerSelection === `scissors`) {
@@ -32,9 +34,5 @@ function playRound(playerSelection, computerSelection) {
         console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
     }
 }
+playRound(playerSelection, computerSelection);
 
-const playerSelection = document.getElementById(`userInput`).value;
-const computerSelection = getComputerChoice();
-// playerSelection.addEventListener(`submit`, (e) => {
-//     playRound(playerSelection, computerSelection);
-// })
