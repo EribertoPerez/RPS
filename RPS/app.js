@@ -1,5 +1,15 @@
 let score = 0;
-const playerSelection = prompt(`Please enter a choice`).toLowerCase();
+let game = () => {
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt(`Please enter a choice`).toLowerCase();
+        playRound(playerSelection, `${computerSelection()}`);
+        }
+    // if (score >= 3) {
+    //     console.log(`You Win!`)
+    // } else if (score <= 2) {
+    //     console.log(`You lose!`)
+    // }
+};
 let computerSelection = () => {
     let choice = Math.floor(Math.random() * 3);
     let computerSelection = [];
@@ -32,7 +42,8 @@ function playRound(playerSelection, computerSelection) {
         console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
     }
     console.log(score);
+    return score;
 };
+game();
 
-playRound(playerSelection, `${computerSelection()}`);
 
