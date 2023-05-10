@@ -1,43 +1,38 @@
-// 1. get computer choice  DONE (I think?)
-// 1.1 get users choice
-// 2. submit choice 
-// 3. compare choice to computer
-// 4. see if win or loss
-// 5. loop 5 times
-// 6. get win or loss final
-// 7.
-
-const playerSelection = prompt(`Please enter a value`);
-computerSelection = getComputerChoice();
-
-function getComputerChoice() {
+let score = 0;
+const playerSelection = prompt(`Please enter a choice`).toLowerCase();
+let computerSelection = () => {
     let choice = Math.floor(Math.random() * 3);
     let computerSelection = [];
-    if (choice === 0) {
-        computerSelection = "rock";
-    }
-    else if (choice === 1) {
-        computerSelection = "paper";
-    }
-    else if (choice === 2) {
-        computerSelection = "scissors";
+    switch (choice) {
+        case 0:
+            computerSelection.push(`rock`);
+            break;
+        case 1:
+            computerSelection.push(`paper`);
+            break;
+        case 2:
+            computerSelection.push(`scissors`);
+            break;
     }
     return computerSelection;
 }
 function playRound(playerSelection, computerSelection) {
-    let score;
-
-    if (playerSelection === `rock` && computerSelection === `scissors`) {
+    if (playerSelection === computerSelection) {
+        console.log(`It's a tie!`)
+    } else if (playerSelection === `rock` && computerSelection === `scissors`) {
         console.log(`You Win! Rock beats Scissors`);
+        score++;
     } else if (playerSelection === `paper` && computerSelection === `rock`) {
         console.log(`You Win! Paper beats Rock`)
+        score++;
     } else if (playerSelection === `scissors` && computerSelection === `paper`) {
         console.log(`You Win! Scissors beats Paper`)
+        score++;
     } else {
         console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
     }
-    return score
+    console.log(score);
 };
 
-playRound(playerSelection, computerSelection);
+playRound(playerSelection, `${computerSelection()}`);
 
