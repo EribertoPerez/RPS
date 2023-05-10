@@ -9,21 +9,24 @@
 
 const playerSelection = prompt(`Please enter a value`);
 computerSelection = getComputerChoice();
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     let computerSelection = [];
-    if (choice === 0){
+    if (choice === 0) {
         computerSelection = "rock";
     }
-    else if (choice === 1){
+    else if (choice === 1) {
         computerSelection = "paper";
     }
-    else if(choice === 2){
+    else if (choice === 2) {
         computerSelection = "scissors";
     }
     return computerSelection;
 }
 function playRound(playerSelection, computerSelection) {
+    let score;
+
     if (playerSelection === `rock` && computerSelection === `scissors`) {
         console.log(`You Win! Rock beats Scissors`);
     } else if (playerSelection === `paper` && computerSelection === `rock`) {
@@ -33,6 +36,8 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
     }
-}
+    return score
+};
+
 playRound(playerSelection, computerSelection);
 
