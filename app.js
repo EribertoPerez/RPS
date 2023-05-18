@@ -1,15 +1,18 @@
 let score = 0;
-let game = () => {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt(`Please enter a choice`).toLowerCase();
-        playRound(playerSelection, `${computerSelection()}`);
-        }
-    if (score >= 3) {
-        console.log(`You Win the Game!`)
-    } else if (score <= 2) {
-        console.log(`You lose the Game!`)
-    }
-};
+// let game = () => {
+//     for (let i = 0; i < 5; i++) {
+//         const playerSelection = prompt(`Please enter a choice`).toLowerCase();
+//         playRound(playerSelection, `${computerSelection()}`);
+//         }
+//     if (score >= 3) {
+//         console.log(`You Win the Game!`)
+//     } else if (score <= 2) {
+//         console.log(`You lose the Game!`)
+//     }
+button.forEach(addEventListener(`click`, (e) => {
+    console.log(`poopoo`)
+}))
+
 let computerSelection = () => {
     let choice = Math.floor(Math.random() * 3);
     let computerSelection = [];
