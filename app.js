@@ -9,9 +9,12 @@ let score = 0;
 //     } else if (score <= 2) {
 //         console.log(`You lose the Game!`)
 //     }
-button.forEach(addEventListener(`click`, (e) => {
-    console.log(`poopoo`)
-}))
+const button = document.querySelectorAll(`button`)
+button.forEach(button => button.addEventListener(`click`, (e) => {
+    let playerSelection = e.target.className;
+        playRound(playerSelection, computerSelection());
+    }
+))
 
 let computerSelection = () => {
     let choice = Math.floor(Math.random() * 3);
@@ -30,15 +33,15 @@ let computerSelection = () => {
     return computerSelection;
 }
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+    if (playerSelection == computerSelection) {
         console.log(`It's a tie!`)
-    } else if (playerSelection === `rock` && computerSelection === `scissors`) {
+    } else if (playerSelection == `rock` && computerSelection == `scissors`) {
         console.log(`You Win! Rock beats Scissors`);
         score++;
-    } else if (playerSelection === `paper` && computerSelection === `rock`) {
+    } else if (playerSelection == `paper` && computerSelection == `rock`) {
         console.log(`You Win! Paper beats Rock`)
         score++;
-    } else if (playerSelection === `scissors` && computerSelection === `paper`) {
+    } else if (playerSelection == `scissors` && computerSelection == `paper`) {
         console.log(`You Win! Scissors beats Paper`)
         score++;
     } else {
@@ -47,6 +50,6 @@ function playRound(playerSelection, computerSelection) {
     console.log(score);
     return score;
 };
-game();
+// game();
 
 
