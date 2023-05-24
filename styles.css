@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    background-color: rgb(234, 123, 123);
 }
 body {
     display: flex;
@@ -8,9 +9,30 @@ body {
     flex-direction: column;
     gap: 100px;
 }
+.flex-container {
+    display: flex;
+    gap: 15px;
+}
 button {
-height: 250px;
-width: 250px;
-border: 3px solid rgb(66, 23, 23);
-border-radius: 10%;
+    height: 200px;
+    width: 200px;
+    border: 3px solid rgb(138, 74, 138);
+    border-radius: 10%;
+    font-family: monospace;
+    font-size: 2rem;
+}
+.rock {
+    background-image: url(images/rock.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.paper {
+    background-image: url(images/paper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.scissors {
+    background-image: url(images/scissors1.jpg);
+    background-size: cover;
+    background-position: center;
 }
