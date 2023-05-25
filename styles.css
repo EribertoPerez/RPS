@@ -13,6 +13,13 @@ body {
     display: flex;
     gap: 15px;
 }
+.score, .result {
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(138, 74, 138);
+    border-radius: 15px;
+    padding: 25px;
+}
 button {
     height: 200px;
     width: 200px;

@@ -4,7 +4,10 @@ const button = document.querySelectorAll(`button`);
 button.forEach(button => button.addEventListener(`click`, playGame));
 let scorePlayer = 0;
 let scoreComp = 0;
-
+window.onload = () => {
+    displayResult.textContent = `Pick Rock Paper or Scissors to begin.`;
+    scoreResult.textContent = `Your score will show up here.`
+  };
 function playGame(e){
     if (!e.target) return;
     let playerSelection = e.target.className;
@@ -13,6 +16,9 @@ function playGame(e){
         gameResult();
         scorePlayer = 0;
         scoreComp = 0;
+        setTimeout(function(){
+        location.reload();
+        }, 3000);
     }
 }
 function gameResult() {
